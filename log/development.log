@@ -9860,3 +9860,122 @@ Completed 200 OK in 62ms (Views: 23.8ms | ActiveRecord: 10.7ms)
   ↳ db/seeds.rb:7
   [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
   ↳ db/seeds.rb:9
+Started GET "/" for ::1 at 2020-01-31 21:15:35 +1100
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/login
+Filter chain halted as :check_if_logged_in rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/login" for ::1 at 2020-01-31 21:15:35 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 347ms (Views: 340.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-01-31 21:15:43 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SO5VTdKmVRufeesY1S9fzAkE2niPwGR6K8xa30HtwFbuM5ykECcPGCytmFiRsudMhuBJvVpHDd5i5rDQzS0/wQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/users/33
+Completed 302 Found in 373ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/users/33" for ::1 at 2020-01-31 21:15:44 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 25.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/login" for ::1 at 2020-01-31 21:15:47 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G9gf2kG/rqFhXCskN/Zl0lvHlmturz++Gix/UV+vdYa9BdYzgz70otKIWGRza91S1CMFrrsoVhpTBpVe02+KEQ=="}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for ::1 at 2020-01-31 21:15:47 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-01-31 21:15:49 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-01-31 21:15:57 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQnL+c7JPyKIqciOA1rNiAISosh3a52HnugSG3OaN0PH1AIQDEhlITt9u85Hx3UIjfYxDaLs9CPXwvgU/1rI1A==", "user"=>{"name"=>"Yavo", "email"=>"tavo@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tavo@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Yavo"], ["email", "tavo@test.com"], ["created_at", "2020-01-31 10:15:57.874668"], ["updated_at", "2020-01-31 10:15:57.874668"], ["password_digest", "$2a$12$AVTHEikr10ThuVMhqpYeTeO.xsR2zhUWEXx5cmTVhvdiBZaZd9LtC"]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10
+Redirected to http://localhost:3000/users/35
+Completed 302 Found in 388ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/35" for ::1 at 2020-01-31 21:15:57 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 22.2ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/login" for ::1 at 2020-01-31 21:16:00 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AAsqbSYqj2uC4Q3CPt2nTW5TsqtHfbtYmhWJO5w/fV2m1uOE5KvVaDE1foJ6QB/N4bchbpL60vzTP2M0EP+Cyg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2020-01-31 21:16:00 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3533538393302140440)[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3533538393302140440)[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/bin/rake:23
