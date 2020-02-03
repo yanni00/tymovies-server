@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#show'
+  root 'session#new'
 
   get 'about' => 'pages#about'
 

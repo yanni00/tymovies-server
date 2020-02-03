@@ -41,3 +41,12 @@ footer{
   margin-left: 0px;
   background-image: linear-gradient(90deg, #43799c, #777b7e);
 }
+
+a, a:active{
+  color: #ffbe00;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ec721a;
+}
