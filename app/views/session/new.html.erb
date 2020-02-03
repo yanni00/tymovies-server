@@ -1,25 +1,32 @@
 
-<h2>Login</h2>
+<div id="centreScreen">
+  <div id="loginBoxBorder">
 
-<% if flash[:error] %>
-  <!-- Pring out any error message for the user -->
-  <br>
-  <strong><%= flash[:error] %></strong>
-  <br>
-<% end %>
+  <h2>Login</h2>
 
-<%= form_tag login_path do %>
+    <% if flash[:error] %>
+      <!-- Pring out any error message for the user -->
+      <br>
+      <strong><%= flash[:error] %></strong>
+      <br>
+    <% end %>
 
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
 
-  <br>
+    <%= form_tag login_path do %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
 
-  <br>
+      <br>
 
-  <%= submit_tag 'Login' %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
 
-<% end %>
+      <br>
+
+      <%= submit_tag 'Login' %>
+
+    <% end %>
+    <br>
+  </div>
+</div>
