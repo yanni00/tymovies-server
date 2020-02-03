@@ -25,6 +25,14 @@
   border-radius: 5px;
 }
 
+#createUserBorder{
+  background-color: lavender;
+  width: 20vw;
+  text-align: center;
+  padding: 1px 0px 3px 0px;
+  border-radius: 5px;
+}
+
 h1 {
   font-family: Gelasio, Arial, "Times New Roman";
   text-align: center;

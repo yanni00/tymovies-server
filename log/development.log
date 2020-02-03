@@ -13559,3 +13559,322 @@ Completed 200 OK in 701ms (Views: 679.9ms | ActiveRecord: 0.0ms)
   ↳ db/seeds.rb:16
   [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews"[0m
   ↳ db/seeds.rb:18
+Started GET "/login" for ::1 at 2020-02-03 15:35:44 +1100
+  [1m[35m (7.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (26.4ms)
+Started GET "/login" for ::1 at 2020-02-03 15:35:45 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1838ms (Views: 1793.9ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 714ms (Views: 695.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-02-03 15:35:51 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ELnhAP0lDP1kDQbleZiHmxCZrv+b5amD+iFu2Aza8ecWhfOzqEF19EwJ2pV/5j6kz0POjSneuG95A+UxiIcpTg==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 917ms (ActiveRecord: 58.3ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-03 15:35:52 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 284ms (Views: 247.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-03 15:51:47 +1100
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 643ms (Views: 553.8ms | ActiveRecord: 18.8ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1577132861882468835)[0m
+  ↳ bin/rails:4
+  [1m[35m (13.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateComments (20200203053025)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (60.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "userComment" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200203053025_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200203053025"]]
+  ↳ bin/rails:4
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1577132861882468835)[0m
+  ↳ bin/rails:4
+  [1m[35m (16.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Yanni"], ["email", "yanni@test.com"], ["created_at", "2020-02-03 05:35:29.704925"], ["updated_at", "2020-02-03 05:35:29.704925"], ["password_digest", "$2a$12$RYS900GsLId0EbdSrxIiL.OoyzOhmoQ5WRfx9Zl7WIW3GC/1Jwitm"], ["admin", true]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:7
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tony@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:7
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tony"], ["email", "tony@test.com"], ["created_at", "2020-02-03 05:35:30.175845"], ["updated_at", "2020-02-03 05:35:30.175845"], ["password_digest", "$2a$12$JGdimVcWAjqk0FSow1aFOe3RfPai.3HhxngGh8prjefMy5LdG04fe"], ["admin", true]]
+  ↳ db/seeds.rb:7
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mReview Load (3.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Destroy (0.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mReview Create (1.0ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "movieTitle", "movieRating", "userReview", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Best Movie Review Ever!!"], ["movieTitle", "Monty Python and the Holy Grail"], ["movieRating", "97"], ["userReview", "A great laugh for some ages. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["created_at", "2020-02-03 05:35:30.236659"], ["updated_at", "2020-02-03 05:35:30.236659"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews"[0m
+  ↳ db/seeds.rb:18
+Started GET "/" for ::1 at 2020-02-03 16:35:45 +1100
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 876ms (Views: 817.9ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/login" for ::1 at 2020-02-03 16:35:55 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cqvcA2qy3LaDu/tsy5vqhtzc84ZOyWc5hFIfKH7aCrB0l86wP9alv6u/JxzN5VO5AwaT9PzydtUHcJTB+ofSGQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 601ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/users/5" for ::1 at 2020-02-03 16:35:56 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 45.2ms | ActiveRecord: 6.0ms)
+
+
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:1
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:1
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Yanni"], ["email", "yanni@test.com"], ["created_at", "2020-02-03 05:45:26.923958"], ["updated_at", "2020-02-03 05:45:26.923958"], ["password_digest", "$2a$12$cRttIExy3o/GjmOZiHXFGuhZ36883sYiNPMJuBaiYQ0YukVW84WQq"], ["admin", true]]
+  ↳ db/seeds.rb:5
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:7
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tony@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:7
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tony"], ["email", "tony@test.com"], ["created_at", "2020-02-03 05:45:27.435852"], ["updated_at", "2020-02-03 05:45:27.435852"], ["password_digest", "$2a$12$zpktTDJJNCZP0P297Hhq4u4Ro6fD1372wqclzxr8NQ0tYMPZkuey."], ["admin", true]]
+  ↳ db/seeds.rb:7
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mReview Load (6.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mReview Destroy (1.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mReview Create (1.8ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "movieTitle", "movieRating", "userReview", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "The Best Movie Review Ever!!"], ["movieTitle", "Monty Python and the Holy Grail"], ["movieRating", "97"], ["userReview", "A great laugh for some ages. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["created_at", "2020-02-03 05:45:27.612722"], ["updated_at", "2020-02-03 05:45:27.612722"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews"[0m
+  ↳ db/seeds.rb:18
+Started GET "/" for ::1 at 2020-02-03 17:09:09 +1100
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 858ms (Views: 797.7ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/login" for ::1 at 2020-02-03 17:09:50 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XNVcughYE17T6mMKfVlMjkRw/ZaNBM+QtYpQjcq6G8Ba6U4JXTxqV/vuv3p7J/Wxm6qd5D8/3nw2qNtkTufDaQ==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3001/login
+Completed 302 Found in 568ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/login" for ::1 at 2020-02-03 17:09:50 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 75ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-02-03 17:09:55 +1100
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8o8Nl1Q8cdb/9CgDt+xVqRgmLr2CXOX3OcNAFg80GRb0sx8kAVgI39fw9HOxkuyWx/xOzzBn9Bu64cv/i2nBvw==", "email"=>"yanni@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:6
+Redirected to http://localhost:3001/users/7
+Completed 302 Found in 572ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/users/7" for ::1 at 2020-02-03 17:09:55 +1100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 47.3ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/login" for ::1 at 2020-02-03 17:10:30 +1100
+Processing by SessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fedOegllvRwWdzqdQDB2pABwb8vT2SxWfXgpban8I/J721zJXAHEFT5z5u1GTs+b36oPuWHiPbr+WqKELaH7Ww=="}
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3001/login
+Completed 302 Found in 16ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/login" for ::1 at 2020-02-03 17:10:30 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:10:31 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 91ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:11:17 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:11:29 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 63ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:12:33 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 239ms (Views: 231.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-02-03 17:12:47 +1100
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 65ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:12:48 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 64ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-03 17:13:50 +1100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 58ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
