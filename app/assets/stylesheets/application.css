@@ -14,12 +14,12 @@
  *= require_self
  */
 #centreScreen{
-  margin-left: 40vw;
+  margin-left: 37vw;
 }
 
 #loginBoxBorder{
   background-color: lavender;
-  width: 20vw;
+  width: 25vw;
   text-align: center;
   padding: 1px 0px 3px 0px;
   border-radius: 5px;
@@ -27,7 +27,7 @@
 
 #createUserBorder{
   background-color: lavender;
-  width: 20vw;
+  width: 25vw;
   text-align: center;
   padding: 1px 0px 3px 0px;
   border-radius: 5px;
