@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  scope '/api' do
-    post 'user_token' => 'user_token#create'
+  # scope '/api' do
+  #   post 'user_token' => 'user_token#create'
+  #
+  # end
 
-  end
+  post 'api/user_token' => 'user_token#create'
 
     resources :users
 
