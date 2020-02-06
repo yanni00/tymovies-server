@@ -20998,3 +20998,216 @@ puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 =======
 >>>>>>> 1a4555bf8a70cf1b0308613bb30a2cd9a51c55e2
 >>>>>>> 6127be5a7ef8f09bae9b18ad3019bf4bd60ab944
+Started GET "/reviews" for ::1 at 2020-02-06 11:37:05 +1100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 37ms (Views: 17.3ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:37:08 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:40:29 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:40:33 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:40:37 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:40:50 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mReview Load (3.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:41:12 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 71ms (Views: 35.1ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:41:20 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 33ms (Views: 16.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:41:25 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:49:25 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 97ms (Views: 33.1ms | ActiveRecord: 55.2ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:51:07 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 463ms (Views: 0.5ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:51:08 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 477ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:51:42 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:56:34 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 401ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:56:36 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 481ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:56:55 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 403ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:56:58 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (23.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 516ms (Views: 0.3ms | ActiveRecord: 23.8ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:57:27 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 419ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:57:29 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 468ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reviews" for ::1 at 2020-02-06 11:58:18 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 11:58:22 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 44ms (Views: 17.2ms | ActiveRecord: 15.3ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:59:26 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 403ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 11:59:28 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 463ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 12:00:52 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 409ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 12:08:48 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 408ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 12:11:25 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 680ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 12:15:09 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 390ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/user_token/" for ::1 at 2020-02-06 12:15:13 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"yanni@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yanni@test.com"], ["LIMIT", 1]]
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 201 Created in 442ms (Views: 0.3ms | ActiveRecord: 7.9ms)
+
+
