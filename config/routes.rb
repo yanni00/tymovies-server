@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'reviews' => 'reviews#index'
   get 'comments' => 'comments#index'
+  post '/reviews' => 'reviews#create'
 
   # scope '/api' do
   #   post 'user_token' => 'user_token#create'
