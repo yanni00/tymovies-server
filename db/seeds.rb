@@ -28,12 +28,14 @@ Comment.destroy_all
 
 puts "Creating comments"
 
-c1 = Comment.create! name:'Good Advice', userComment:'This review is written really well! This review is written really well! This review is written really well! This review is written really well!', user_id:u1.id, review_id:r1.id
+c1 = Comment.create! body:'This review is written really well! This review is written really well! This review is written really well! This review is written really well!', user_id:u1.id, review_id:r1.id
 
-c2 = Comment.create! name:'Good Advice', userComment:'This review is written really well! This review is written really well! This review is written really well! This review is written really well!', user_id:u2.id, review_id:r2.id
+c2 = Comment.create! body:'This review is written really well! This review is written really well! This review is written really well! This review is written really well!', user_id:u2.id, review_id:r2.id
 
-c3 = Comment.create! name:'Bad Review', userComment:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', user_id:u1.id, review_id:r3.id
+c3 = Comment.create! body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', user_id:u1.id, review_id:r3.id
 
-c4 = Comment.create! name:'Bad Review', userComment:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', user_id:u2.id, review_id:r4.id
+c4 = Comment.create! body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', user_id:u2.id, review_id:r4.id
+
+c5 = Comment.create! body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', user_id:u1.id, review_id:r4.id
 
 puts "Created #{ Comment.count } comments"
