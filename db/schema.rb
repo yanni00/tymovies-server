@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_053025) do
+ActiveRecord::Schema.define(version: 2020_02_06_053805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,16 +20,19 @@ ActiveRecord::Schema.define(version: 2020_02_03_053025) do
     t.text "userComment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "review_id"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "userName"
     t.string "name"
     t.string "movieTitle"
     t.string "movieRating"
     t.text "userReview"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "tmdb_movie_id"
   end
 
   create_table "users", force: :cascade do |t|
