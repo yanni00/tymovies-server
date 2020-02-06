@@ -21211,3 +21211,19 @@ Processing by UserTokenController#create as HTML
 Completed 201 Created in 442ms (Views: 0.3ms | ActiveRecord: 7.9ms)
 
 
+Started GET "/reviews" for ::1 at 2020-02-06 12:51:30 +1100
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yanni/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/controllers/reviews_controller.rb:5
+Completed 200 OK in 149ms (Views: 112.0ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/comments" for ::1 at 2020-02-06 13:09:57 +1100
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:12
+Completed 200 OK in 48ms (Views: 17.8ms | ActiveRecord: 26.6ms)
+
+
