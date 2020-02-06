@@ -14,4 +14,8 @@ class ReviewsController < ApplicationController
     }
   end
 
+  def create
+    review = Review.create name: params[:name], userReview: params[:content]
+    render json: {success: true, review: review}
+  end
 end
