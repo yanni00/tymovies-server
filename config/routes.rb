@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/reviews' => 'reviews#index'
+  get '/reviews/:movie_id' => 'reviews#index'
   post '/reviews' => 'reviews#create'
   get '/comments' => 'comments#index'
   post '/comments' => 'comments#create'
