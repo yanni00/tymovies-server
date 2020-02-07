@@ -17,6 +17,15 @@ class ReviewsController < ApplicationController
 
   def create
     review = Review.create name: params[:name], userReview: params[:content], tmdb_movie_id: params[:movieId], user_id: current_user.id
-    render json: {success: true, review: review}
+    render json: review, include: {
+      user: {
+        only: [:name]
+      },
+      comments: {
+        include: {
+          user: { only: [:name]  }
+        }
+      }
+    }
   end
 end
