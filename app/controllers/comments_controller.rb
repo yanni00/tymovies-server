@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
 
-    newComment = Comment.create name:'', userComment: params[:userComment]   
+    newComment = Comment.create name:'', userComment: params[:userComment], user_id: params[:user_id], review_id: params[:review_id] 
 
     puts "NEW USER"
     p newComment
