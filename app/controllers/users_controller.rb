@@ -14,6 +14,13 @@ class UsersController < ApplicationController
 
   end
 
+  def current
+    if current_user.present?
+      render :json => current_user
+    else
+      render :json => {}
+  end
+  
   def create
     # @user = User.create user_params
 
