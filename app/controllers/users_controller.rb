@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       render :json => current_user
     else
       render :json => {}
+    end
   end
 
   def create
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
     else
       puts "+++++++++++++++++++++++"
       render json: {errors: newUser.errors.full_messages, }, status: 422
-    
+    end
 
     # if @user.persisted?
     #   session[:user_id] = @user.id
