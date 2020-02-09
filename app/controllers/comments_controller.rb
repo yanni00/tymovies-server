@@ -1,12 +1,15 @@
 class CommentsController < ApplicationController
+
+  before_action :authenticate_user
+
   def new
   end
 
   def create
 
-    newComment = Comment.create name:'', userComment: params[:userComment], user_id: params[:user_id], review_id: params[:review_id] 
+    newComment = Comment.create body: params[:body], review_id: params[:review_id], user_id: current_user.id
 
-    puts "NEW USER"
+    puts "NEW COMMENT"
     p newComment
 
     if newComment.persisted?
