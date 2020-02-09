@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/reviews' => 'reviews#create'
   get '/comments' => 'comments#index'
   post '/comments' => 'comments#create'
+  post '/users' => 'users#create'
 
   # scope '/api' do
   #   post 'user_token' => 'user_token#create'
