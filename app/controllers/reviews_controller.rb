@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user
 
   def index
+
     render json: Review.where(tmdb_movie_id: params[:movie_id]).reverse, include: {
       user: {
         only: [:name]
@@ -10,7 +11,8 @@ class ReviewsController < ApplicationController
       comments: {
         include: {
           user: { only: [:name]  }
-        }
+        },
+      order: "created_at DESC"  
       }
     }
   end
